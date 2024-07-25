@@ -1,6 +1,7 @@
 module.exports = {
   name: 'ping',
   description: "Replies with the bot ping",
+  testOnly: true,
   callback: async (client, interaction) => {
     await interaction.deferReply();
 

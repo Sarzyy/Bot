@@ -1,5 +1,5 @@
-const path = require('path')
-const getAllFiles = require('./getAllFiles')
+const path = require('path');
+const getAllFiles = require('./getAllFiles');
 
 module.exports = (exceptions = []) => {
   let localCommands = [];
@@ -7,7 +7,7 @@ module.exports = (exceptions = []) => {
   const commandCategories = getAllFiles(
     path.join(__dirname, '..', 'commands'),
     true
-  )
+  );
 
   for (const commandCategory of commandCategories) {
     const commandFiles = getAllFiles(commandCategory);
@@ -18,9 +18,10 @@ module.exports = (exceptions = []) => {
       if (exceptions.includes(commandObject.name)) {
         continue;
       }
-      localCommands.push(commandObject)
+
+      localCommands.push(commandObject);
     }
   }
 
   return localCommands;
-}
+};
