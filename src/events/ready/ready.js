@@ -1,5 +1,4 @@
 const { Client, Interaction, ActivityType } = require('discord.js')
-const localCommands = require('../interactionCreate/handleCommands')
 
 module.exports = async (client, member, guild) => {
 
@@ -10,6 +9,5 @@ let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a
   })
 
   console.log(`✅ ${client.user.tag} has succesfully logged in and is on ${client.guilds.cache.size} guild(s)`)
-  console.log(localCommands)
 }
 

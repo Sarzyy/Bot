@@ -29,7 +29,7 @@ module.exports = {
 
     interaction.editReply(
       targetUserId === interaction.member.id
-        ? `Youre balance is **${user.balance}**`
+        ? `Your balance is **${user.balance}**`
         : `<@${targetUserId}>'s balance is **${user.balance}**`
     )
   },
