@@ -5,7 +5,7 @@ module.exports = async (client, member, guild) => {
 
 let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0)
   client.user.setActivity({
-    name: `on ${client.guilds.cache.size} Guild(s)!`,
+    name: `with ${client.guilds.cache.size} Guild(s)!`,
     type: ActivityType.Playing,
   })
 
