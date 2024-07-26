@@ -5,6 +5,8 @@ const getLocalCommands = require('../../utils/getLocalCommands');
 
 module.exports = async (client) => {
   try {
+    console.log("┍-------------------------------------------")
+    console.log("| Loaded Commands Succesfully: ")
     const localCommands = getLocalCommands();
     const applicationCommands = await getApplicationCommands(
       client,
@@ -48,6 +50,8 @@ module.exports = async (client) => {
 
         console.log(`👍 Registered command "${name}."`);
       }
+
+      console.log(`| ✅ Loaded this command Sucesfully: ${name}`)
     }
   } catch (error) {
     console.log(`TThere was an error: ${error}`);

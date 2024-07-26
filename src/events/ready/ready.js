@@ -8,6 +8,7 @@ let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a
     type: ActivityType.Playing,
   })
 
+  console.log("┖-------------------------------------------")
   console.log(`✅ ${client.user.tag} has succesfully logged in and is on ${client.guilds.cache.size} guild(s)`)
 }
 
