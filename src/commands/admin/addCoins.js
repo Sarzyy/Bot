@@ -65,6 +65,7 @@ module.exports = {
       name: 'amount',
       description: 'The amount you want to add to a user',
       type: ApplicationCommandOptionType.Integer,
+      required: true,
     },
   ],
   permissionsRequired: [PermissionFlagsBits.Administrator],

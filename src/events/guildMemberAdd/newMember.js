@@ -1,15 +1,19 @@
-const { Client, GuildMember, Embed, EmbedBuilder} = require('discord.js')
+const { Client, GuildMember, Embed, EmbedBuilder, Interaction } = require('discord.js')
 const WelcomeChannel = require('./../../models/WelcomeChannel')
 
 /**
  * 
  * @param {Client} client 
  * @param {GuildMember} member 
+ * @param {Interaction} interaction
  */
 module.exports = async (client, member, interaction) => {
   try {
-    let guild = member.guild;
+
+    const guild = member.guild;
     const message = interaction;
+
+
     if (!guild) return;
 
     const welcome = new EmbedBuilder()
@@ -33,12 +37,22 @@ module.exports = async (client, member, interaction) => {
       }
     ])
 
-    let welcomeChannel = await WelcomeChannel.findOne({ guildId: interaction.guild.id });
 
 
-    member.guild.channels.cache.get(welcomeChannel).send({ embeds: [welcome] })
+    client.channels.cache.get('1266761513222275147').setName(`✅ | MemberCount: ${guild.memberCount}`)
+
+    let welcomeChannel = await WelcomeChannel.findOne({ guildId: member.guild.id });
+
+
+    if (!welcomeChannel) {
+      return;
+    }
+
+
+    member.guild.channels.cache.get(welcomeChannel.channelId).send({ embeds: [welcome] })
+    
 
   } catch (error) {
-    console.log(`Error while Welcoming a player: ${error}`);
+    console.log(error);
   }
 }

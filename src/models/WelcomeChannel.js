@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose')
 
-const autoRoleSchema = new Schema({
+const welcomeChannel = new Schema({
   guildId: {
     type: String,
     required: true,
@@ -12,4 +12,4 @@ const autoRoleSchema = new Schema({
   }
 })
 
-module.exports = model('WelcomeChannel', autoRoleSchema);
+module.exports = model('WelcomeChannel', welcomeChannel);

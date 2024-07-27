@@ -54,6 +54,6 @@ module.exports = async (client) => {
       console.log(`| ✅ Loaded this command Sucesfully: ${name}`)
     }
   } catch (error) {
-    console.log(`TThere was an error: ${error}`);
+    console.log(error);
   }
 };
