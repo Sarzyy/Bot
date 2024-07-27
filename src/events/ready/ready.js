@@ -9,7 +9,6 @@ let memberCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a,
   })
 
 
-
   console.log("┖-------------------------------------------")
   console.log(`✅ ${client.user.tag} has succesfully logged in and is on ${client.guilds.cache.size} guild(s)`)
   console.log(`✅ Currently playing with ${memberCount} User!!`)

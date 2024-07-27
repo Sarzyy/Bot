@@ -71,12 +71,11 @@ module.exports = {
 
       client.on('interactionCreate', async (interaction) => {
         if (!interaction.isButton()) return;
-        await interaction.deferReply({ ephemeral: true });
 
         const role = interaction.guild.roles.cache.get(interaction.customId);
 
         if (!role) {
-          interaction.editReply({
+          interaction.reply({
             content: 'I could not find that role',
           })
           return;
@@ -86,11 +85,11 @@ module.exports = {
 
         if(hasRole) {
           await interaction.member.roles.remove(roleId);
-          await interaction.editReply(`The role ${roleId} has been removed!`)
+          await interaction.reply(`The role ${roleId} has been removed!`)
         }
 
         await interaction.member.roles.add(roleId)
-        await interaction.editReply(`The role @${roleId} has been added!`)
+        await interaction.reply(`The role @${roleId} has been added!`)
       })
 
 		} catch (error) {
