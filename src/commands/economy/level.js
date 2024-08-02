@@ -60,7 +60,6 @@ module.exports = {
       .setLevel(fetchedLevel.level)
       .setCurrentXP(fetchedLevel.xp)
       .setRequiredXP(calculateLevelXp(fetchedLevel.level))
-      .setStatus(targetUserObj.presence.status)
       .setUsername(targetUserObj.user.username)
       
 			const image = await rank.build({ format: 'png',});

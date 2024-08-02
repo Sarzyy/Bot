@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@discordjs/voice": "github:discordjs/voice",
     "canvacord": "^6.0.2",
     "discord-gamecord": "^4.4.2",
     "discord.js": "^14.15.3",

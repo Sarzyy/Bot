@@ -13,6 +13,14 @@ module.exports = async (client, member, interaction) => {
     const guild = member.guild;
     const message = interaction;
 
+    console.log("Trying to update CounterChannel (Welcome)")
+
+    const counterChannel = '1266891089533468755';
+
+    console.log(counterChannel + `:` + guild.memberCount)
+
+    member.channels.cache.get(counterChannel).setName(`✅ Members: ` + memberCount)
+
 
     if (!guild) return;
 
@@ -38,10 +46,8 @@ module.exports = async (client, member, interaction) => {
     ])
 
 
-
-    client.channels.cache.get('1266761513222275147').setName(`✅ | MemberCount: ${guild.memberCount}`)
-
     let welcomeChannel = await WelcomeChannel.findOne({ guildId: member.guild.id });
+
 
 
     if (!welcomeChannel) {

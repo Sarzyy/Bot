@@ -77,6 +77,7 @@ module.exports = {
         if (!role) {
           interaction.reply({
             content: 'I could not find that role',
+            ephemeral: true,
           })
           return;
         }
@@ -84,12 +85,20 @@ module.exports = {
         const hasRole = interaction.member.roles.cache.has(roleId)
 
         if(hasRole) {
-          await interaction.member.roles.remove(roleId);
-          await interaction.reply(`The role ${roleId} has been removed!`)
+          interaction.reply({
+            content: 'Why do you want to remove your role?? You cant!! Just kidding xDDD',
+            ephemeral: true,
+            
+          })
+          await interaction.member.roles.remove(roleId)
+          return;
         }
 
         await interaction.member.roles.add(roleId)
-        await interaction.reply(`The role @${roleId} has been added!`)
+        await interaction.reply({
+          content: `The role @${roleId} has been added!`,
+          ephemeral: true,
+        })
       })
 
 		} catch (error) {
